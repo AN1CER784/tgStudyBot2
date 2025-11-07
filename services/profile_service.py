@@ -59,7 +59,7 @@ async def handle_calendar_process(callback: CallbackQuery,
         return
 
     # 2) Обычная обработка выбора/навигации
-    cal = DialogCalendar(locale="ru_RU")
+    cal = DialogCalendar(locale="ru_RU.utf8")
     cal.set_dates_range(MIN_DOB, MAX_DOB)
     selected, picked_date = await cal.process_selection(callback, callback_data)
     if not selected:
@@ -68,7 +68,7 @@ async def handle_calendar_process(callback: CallbackQuery,
 
 
 async def reopen_calendar(callback: CallbackQuery):
-    cal = DialogCalendar(locale="ru_RU")
+    cal = DialogCalendar(locale="ru_RU.utf8")
     await callback.message.edit_text("Выберите дату рождения:")
     await callback.message.answer("Календарь снова открыт 👇", reply_markup=await cal.start_calendar())
     await callback.answer()

@@ -22,6 +22,6 @@ DB_HOST = getenv('POSTGRES_HOST')  # хост БД
 DB_PORT = getenv('POSTGRES_PORT')  # порт БД
 
 # ссылка для доступа к БД
-DATABASE_URL = f'postgres://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
+DATABASE_URL = f'postgres://{DB_USER}:{DB_PASSWORD}@db:5432/{DB_NAME}'
 
 bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode='HTML'))

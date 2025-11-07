@@ -16,8 +16,7 @@ CONFIG = {
 
 
 async def init_db():
-    await Tortoise.init(config=CONFIG, )
-    await Tortoise.generate_schemas()
+    await Tortoise.init(config=CONFIG)
 
 
 async def close_db():
